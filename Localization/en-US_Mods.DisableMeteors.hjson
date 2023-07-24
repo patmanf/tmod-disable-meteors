@@ -1,6 +1,6 @@
 Configs: {
 	Config: {
-		DisplayName: Config
+		DisplayName: ""
 
 		DisableMeteorDropping: {
 			Tooltip: ""
@@ -8,18 +8,18 @@ Configs: {
 		}
 
 		GiveMeteoriteOre: {
-			Tooltip: spawns 350-450 meteorite ore when a meteor tries to land
+			Tooltip: spawn 400-500 meteorite ore (divided by number of players) when a meteor is stopped
 			Label: Give Meteorite Ore
 		}
 
-		Announcements: {
-			Tooltip: Send a message when a meteor is stopped and when ore is given
-			Label: Announcements
+		DropMeteorCommand: {
+			Label: Drop Meteor Command
+			Tooltip: ""
 		}
 	}
 }
 
 Messages: {
-	Stopped: "[c/32ff82:A meteorite was stopped!]"
-	OresGiven: "[c/32ff82:Given {0} {$ItemName.Meteorite}] [i/s{0}:116]"
+	Stopped: "[c/32FF82:A meteorite burned up in the atmosphere!]"
+	OresGiven: "[c/FFF014:Collected {0} {$ItemName.Meteorite}] [i/s{0}:116]"
 }

@@ -14,7 +14,4 @@ public class Config : ModConfig
 
     [DefaultValue(false)]
     public bool GiveMeteoriteOre;
-
-    [DefaultValue(true)]
-    public bool Announcements;
 }
