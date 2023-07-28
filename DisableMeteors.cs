@@ -10,9 +10,9 @@ namespace DisableMeteors;
 
 public class DisableMeteors : Mod
 {
-    public override void Load() => On_WorldGen.dropMeteor += StopMeteor;
+    public override void Load() => On.Terraria.WorldGen.dropMeteor += StopMeteor;
 
-    private void StopMeteor(On_WorldGen.orig_dropMeteor orig)
+    private void StopMeteor(On.Terraria.WorldGen.orig_dropMeteor orig)
     {
         if (!Config.Instance.DisableMeteorDropping)
         {
@@ -21,7 +21,7 @@ public class DisableMeteors : Mod
         }
 
         ChatHelper.BroadcastChatMessage(
-            NetworkText.FromKey("Mods.DisableMeteors.Messages.Stopped"),
+            NetworkText.FromKey("[c/32FF82:A meteorite burned up in the atmosphere!]"),
             Color.White
         );
 
@@ -38,7 +38,7 @@ public class DisableMeteors : Mod
                 player.QuickSpawnItem(player.GetSource_FromThis(), ItemID.Meteorite, amount);
 
                 ChatHelper.SendChatMessageToClient(
-                    NetworkText.FromKey("Mods.DisableMeteors.Messages.OresGiven", amount),
+                    NetworkText.FromKey($"[c/FFF014:Collected {amount} Meteorite] [i/s{amount}:116]", amount),
                     Color.White,
                     i
                 );
